@@ -10,16 +10,16 @@ import prisma from "@lib/prisma";
 export const getServerSideProps: GetServerSideProps<{
   post: PostProps;
 }> = async ({ params }) => {
-  const post = await prisma.post.findUnique({
+  const post = (await prisma.post.findUnique({
     where: { id: String(params?.id) },
     include: {
       author: {
         select: { name: true, email: true },
       },
     },
-  });
+  })) as PostProps;
   return {
-    props: { post },
+    props: { post: post },
   };
 };
 
