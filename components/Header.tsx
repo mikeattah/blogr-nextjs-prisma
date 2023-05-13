@@ -150,7 +150,7 @@ const Header: React.FC = () => {
     right = (
       <div className="right">
         <p>
-          {session.user.name} ({session.user.email})
+          {session.user?.name} ({session.user?.email})
         </p>
         <Link href="/create">
           <button type="button">
