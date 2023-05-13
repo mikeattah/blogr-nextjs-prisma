@@ -1,4 +1,5 @@
-import prisma from "../../../lib/prisma";
+import { NextApiRequest, NextApiResponse } from "next";
+import prisma from "@lib/prisma";
 
 /**
  * DELETE /api/post/:id
@@ -9,8 +10,11 @@ import prisma from "../../../lib/prisma";
  *
  * @param res
  */
-export default async function handle(req, res) {
-  const postId = req.query.id;
+export default async function handle(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const postId = req.body?.id;
   if (req.method === "DELETE") {
     const post = await prisma.post.delete({
       where: { id: postId },
