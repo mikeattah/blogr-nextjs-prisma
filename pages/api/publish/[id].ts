@@ -5,6 +5,10 @@ import prisma from "@lib/prisma";
  * PUT /api/publish/:id
  *
  * API route to modify the database using Prisma Client
+ *
+ * @param req
+ *
+ * @param res
  */
 export default async function handle(
   req: NextApiRequest,

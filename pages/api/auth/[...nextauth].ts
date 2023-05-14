@@ -7,11 +7,6 @@ import prisma from "@lib/prisma";
 const authHandler: NextApiHandler = (req, res) => NextAuth(req, res, options);
 export default authHandler;
 
-type ProviderProps = {
-  clientId: string | undefined;
-  clientSecret: string | undefined;
-};
-
 const options = {
   providers: [
     GitHubProvider({

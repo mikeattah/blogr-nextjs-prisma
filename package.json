@@ -1,7 +1,7 @@
 {
-  "name": "hello-next",
+  "name": "blogr-nextjs-prisma",
   "version": "1.0.0",
-  "description": "",
+  "description": "How to Build a Full-Stack App with Next.js, Prisma, and Vercel Postgres",
   "scripts": {
     "dev": "next",
     "prebuild": "prisma generate",

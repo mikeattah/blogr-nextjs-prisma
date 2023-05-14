@@ -7,6 +7,10 @@ import prisma from "@lib/prisma";
  *
  * Update the API route to modify the database using Prisma Client
  *
+ * @param req
+ *
+ * @param res
+ *
  * Required fields in body: title
  *
  * Optional fields in body: content

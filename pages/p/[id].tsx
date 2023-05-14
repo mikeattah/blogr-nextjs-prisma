@@ -23,6 +23,11 @@ export const getServerSideProps: GetServerSideProps<{
   };
 };
 
+/**
+ * Publish a post via API route
+ *
+ * @param id
+ */
 async function publishPost(id: string): Promise<void> {
   await fetch(`/api/publish/${id}`, {
     method: "PUT",
@@ -31,7 +36,9 @@ async function publishPost(id: string): Promise<void> {
 }
 
 /**
- * Handle deleting a post via the API route
+ * Delete a post via API route
+ *
+ * @param id
  */
 async function deletePost(id: string): Promise<void> {
   await fetch(`/api/post/${id}`, {

@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   });
   return {
-    props: { feed },
+    props: { feed: feed },
     revalidate: 10,
   };
 };
@@ -23,13 +23,13 @@ type Props = {
   feed: PostProps[];
 };
 
-const Blog: React.FC<Props> = ({ feed }) => {
+const Blog: React.FC<Props> = (props) => {
   return (
     <Layout>
       <div className="page">
         <h1>Public Feed</h1>
         <main>
-          {feed.map((post) => (
+          {props.feed.map((post) => (
             <div key={post.id} className="post">
               <Post post={post} />
             </div>
